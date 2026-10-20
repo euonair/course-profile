@@ -1,0 +1,723 @@
+{
+  "@context": [
+    "https://schema.org/",
+    {
+      "euonair": "https://w3id.org/euonair/course#",
+      "euvoc": "https://w3id.org/euonair/vocab/",
+      "dcterms": "http://purl.org/dc/terms/"
+    }
+  ],
+  "@id": "https://example.edu/course-units/NLP-3060",
+  "@type": [
+    "Course",
+    "euonair:CourseUnit"
+  ],
+  "schemaVersion": "https://w3id.org/euonair/course/profile/0.9",
+  "courseCode": "NLP-3060",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "https://example.edu/ns/course-codes",
+    "value": "NLP-3060"
+  },
+  "name": [
+    {
+      "@value": "Natural Language Processing",
+      "@language": "en"
+    },
+    {
+      "@value": "Verarbeitung natürlicher Sprache",
+      "@language": "de"
+    }
+  ],
+  "alternateName": {
+    "@value": "NLP",
+    "@language": "en"
+  },
+  "euonair:unitType": {
+    "@id": "euvoc:unit-type/module"
+  },
+  "provider": {
+    "@type": "CollegeOrUniversity",
+    "@id": "https://example.edu/",
+    "name": "Example University of Applied Sciences",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DE"
+    },
+    "department": {
+      "@type": "Organization",
+      "name": "Faculty of Computer Science"
+    }
+  },
+  "url": "https://example.edu/catalogue/NLP-3060",
+  "description": [
+    {
+      "@value": "The module covers how computers process, understand and generate written and spoken language, from text data and classical models to Transformer-based language models. Students specify NLP tasks, build and adapt solutions with prompting, retrieval and fine-tuning, evaluate them with suitable metrics and decide how an application can be released responsibly. Lectures with integrated exercises are combined with paper reading and team mini-projects.",
+      "@language": "en"
+    }
+  ],
+  "abstract": {
+    "@value": "From text data to language models: building, adapting and evaluating NLP applications.",
+    "@language": "en"
+  },
+  "syllabusSections": [
+    {
+      "@type": "Syllabus",
+      "position": 1,
+      "name": "Language tasks, text data and tokenization",
+      "timeRequired": "PT15H"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 2,
+      "name": "Baselines and classical models: classification, tagging, n-gram language models",
+      "timeRequired": "PT15H"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 3,
+      "name": "Word embeddings and contextual representations",
+      "timeRequired": "PT15H"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 4,
+      "name": "Attention and the Transformer architecture",
+      "timeRequired": "PT20H"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 5,
+      "name": "Pretraining, decoding and post-training of language models",
+      "timeRequired": "PT20H"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 6,
+      "name": "Prompting and checkable outputs",
+      "timeRequired": "PT15H"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 7,
+      "name": "Retrieval-augmented generation and fine-tuning",
+      "timeRequired": "PT20H"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 8,
+      "name": "Evaluation, agents and responsible release",
+      "timeRequired": "PT30H"
+    }
+  ],
+  "keywords": [
+    "natural language processing",
+    "language models",
+    "Transformer",
+    "prompting",
+    "retrieval-augmented generation",
+    "fine-tuning",
+    "evaluation"
+  ],
+  "about": {
+    "@type": "DefinedTerm",
+    "termCode": "0613",
+    "name": "Software and applications development and analysis (ISCED-F 2013, illustrative code)",
+    "inDefinedTermSet": "ISCED-F 2013"
+  },
+  "inLanguage": [
+    "en"
+  ],
+  "educationalLevel": {
+    "@type": "DefinedTerm",
+    "@id": "http://data.europa.eu/snb/eqf/6",
+    "termCode": "6",
+    "name": "EQF level 6 (first cycle, bachelor)"
+  },
+  "euonair:difficulty": {
+    "@id": "euvoc:difficulty/advanced"
+  },
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student",
+    "audienceType": "Final-year bachelor students in artificial intelligence or computer science with Python and basic machine learning; open to master students in information systems."
+  },
+  "euonair:programmePlacement": [
+    {
+      "@type": "euonair:ProgrammePlacement",
+      "euonair:programme": {
+        "@type": "EducationalOccupationalProgram",
+        "@id": "https://example.edu/programmes/bsc-artificial-intelligence",
+        "name": "BSc Artificial Intelligence"
+      },
+      "euonair:obligation": {
+        "@id": "euvoc:obligation/compulsory"
+      },
+      "euonair:recommendedSemester": 6
+    }
+  ],
+  "numberOfCredits": {
+    "@type": "QuantitativeValue",
+    "value": 5,
+    "unitText": "ECTS"
+  },
+  "timeRequired": "PT150H",
+  "euonair:workloadComponent": [
+    {
+      "@type": "euonair:WorkloadComponent",
+      "euonair:activityType": {
+        "@id": "euvoc:workload/contact-synchronous"
+      },
+      "euonair:hours": 45
+    },
+    {
+      "@type": "euonair:WorkloadComponent",
+      "euonair:activityType": {
+        "@id": "euvoc:workload/self-study"
+      },
+      "euonair:hours": 95
+    },
+    {
+      "@type": "euonair:WorkloadComponent",
+      "euonair:activityType": {
+        "@id": "euvoc:workload/assessment"
+      },
+      "euonair:hours": 10
+    }
+  ],
+  "teaches": [
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo1",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO1",
+      "description": [
+        {
+          "@value": "Specify an NLP task so that it can be tested — inputs, permitted outputs, success criterion and behaviour when information is missing — and explain what a reported score supports.",
+          "@language": "en"
+        },
+        {
+          "@value": "Eine NLP-Aufgabe so spezifizieren, dass sie prüfbar ist — Eingaben, zulässige Ausgaben, Erfolgskriterium und Verhalten bei fehlender Information — und erläutern, was ein berichteter Kennwert belegt.",
+          "@language": "de"
+        }
+      ],
+      "euonair:cognitiveLevel": {
+        "@id": "euvoc:cognitive-level/apply"
+      },
+      "euonair:competenceCategory": {
+        "@id": "euvoc:competence-category/skills"
+      },
+      "euonair:contributesTo": {
+        "@id": "https://example.edu/programmes/bsc-artificial-intelligence#plo2"
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo2",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO2",
+      "description": {
+        "@value": "Explain how a Transformer language model turns text into predictions, from tokenization and embeddings through attention to decoding.",
+        "@language": "en"
+      },
+      "euonair:cognitiveLevel": {
+        "@id": "euvoc:cognitive-level/understand"
+      },
+      "euonair:competenceCategory": {
+        "@id": "euvoc:competence-category/knowledge"
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo3",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO3",
+      "description": {
+        "@value": "Implement and adapt NLP solutions with common libraries using prompting, retrieval-augmented generation or fine-tuning, and justify the chosen approach.",
+        "@language": "en"
+      },
+      "euonair:cognitiveLevel": {
+        "@id": "euvoc:cognitive-level/apply"
+      },
+      "euonair:competenceCategory": {
+        "@id": "euvoc:competence-category/skills"
+      },
+      "euonair:relatedSkill": {
+        "@id": "http://data.europa.eu/esco/skill/PLACEHOLDER",
+        "@type": "DefinedTerm",
+        "name": "(ESCO skill to be selected; placeholder)",
+        "inDefinedTermSet": "ESCO"
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo4",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO4",
+      "description": {
+        "@value": "Evaluate NLP systems with metrics matched to the claim, paired comparisons and subgroup tests, and interpret the results critically.",
+        "@language": "en"
+      },
+      "euonair:cognitiveLevel": {
+        "@id": "euvoc:cognitive-level/evaluate"
+      },
+      "euonair:competenceCategory": {
+        "@id": "euvoc:competence-category/skills"
+      },
+      "euonair:contributesTo": {
+        "@id": "https://example.edu/programmes/bsc-artificial-intelligence#plo4"
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo5",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO5",
+      "description": {
+        "@value": "Decide on the release of an NLP application in a decision memo that weighs performance, cost, privacy and the people affected.",
+        "@language": "en"
+      },
+      "euonair:cognitiveLevel": {
+        "@id": "euvoc:cognitive-level/evaluate"
+      },
+      "euonair:competenceCategory": {
+        "@id": "euvoc:competence-category/responsibility-autonomy"
+      },
+      "euonair:relatedSkill": {
+        "@type": "DefinedTerm",
+        "name": "4.2 Protecting personal data and privacy",
+        "inDefinedTermSet": "DigComp 2.2"
+      }
+    }
+  ],
+  "euonair:learningActivity": [
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ta1",
+      "@type": "euonair:LearningActivity",
+      "euonair:activityType": {
+        "@id": "euvoc:activity/lecture"
+      },
+      "euonair:supportsOutcome": [
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo1"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo2"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ta2",
+      "@type": "euonair:LearningActivity",
+      "euonair:activityType": {
+        "@id": "euvoc:activity/lab-exercise"
+      },
+      "euonair:supportsOutcome": [
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo2"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo3"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ta3",
+      "@type": "euonair:LearningActivity",
+      "euonair:activityType": {
+        "@id": "euvoc:activity/project-work"
+      },
+      "euonair:supportsOutcome": [
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo3"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo4"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo5"
+        }
+      ]
+    }
+  ],
+  "euonair:assessmentComponent": [
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ac1",
+      "@type": "euonair:AssessmentComponent",
+      "name": "Oral examination on the mini-projects and the course papers",
+      "euonair:assessmentMethod": {
+        "@id": "euvoc:assessment-method/oral-exam"
+      },
+      "euonair:weightMin": 20,
+      "euonair:weightMax": 30,
+      "euonair:groupMode": {
+        "@id": "euvoc:group-mode/individual"
+      },
+      "euonair:durationMinutes": 20,
+      "euonair:assessmentSetting": {
+        "@id": "euvoc:assessment-setting/supervised-onsite"
+      },
+      "assesses": [
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo1"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo2"
+        }
+      ],
+      "euonair:assessmentCriteria": {
+        "@value": "Correct and precise explanation of the model components used; a task specification that states inputs, outputs and a testable success criterion.",
+        "@language": "en"
+      },
+      "euonair:aiCondition": {
+        "@type": "euonair:AiUsePolicy",
+        "euonair:permissionLevel": {
+          "@id": "euvoc:ai-permission/not-permitted"
+        },
+        "euonair:assessmentAiClass": {
+          "@id": "euvoc:assessment-ai-class/ai-free"
+        },
+        "euonair:disclosureRequirement": {
+          "@id": "euvoc:ai-disclosure/none"
+        },
+        "euonair:note": {
+          "@value": "Supervised on-site examination; no electronic aids.",
+          "@language": "en"
+        }
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ac2",
+      "@type": "euonair:AssessmentComponent",
+      "name": "Team mini-projects with evaluation report and decision memo",
+      "euonair:assessmentMethod": {
+        "@id": "euvoc:assessment-method/project-report"
+      },
+      "euonair:weightMin": 50,
+      "euonair:weightMax": 60,
+      "euonair:groupMode": {
+        "@id": "euvoc:group-mode/group"
+      },
+      "euonair:assessmentSetting": {
+        "@id": "euvoc:assessment-setting/unsupervised-open"
+      },
+      "assesses": [
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo3"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo4"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo5"
+        }
+      ],
+      "euonair:aiCondition": {
+        "@type": "euonair:AiUsePolicy",
+        "euonair:permissionLevel": {
+          "@id": "euvoc:ai-permission/permitted-with-disclosure"
+        },
+        "euonair:assessmentAiClass": {
+          "@id": "euvoc:assessment-ai-class/ai-assisted"
+        },
+        "euonair:excludedPurpose": [
+          {
+            "@id": "euvoc:ai-purpose/generating-submitted-text"
+          }
+        ],
+        "euonair:disclosureRequirement": {
+          "@id": "euvoc:ai-disclosure/detailed-log"
+        },
+        "euonair:verificationExpectation": {
+          "@id": "euvoc:ai-verification/verify-and-be-able-to-explain"
+        },
+        "euonair:note": {
+          "@value": "AI assistance for code is allowed. The evaluation report and the decision memo must be written by the team; append the prompt log and state how outputs were checked.",
+          "@language": "en"
+        }
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ac3",
+      "@type": "euonair:AssessmentComponent",
+      "name": "Notebook exercises",
+      "euonair:assessmentMethod": {
+        "@id": "euvoc:assessment-method/exercises"
+      },
+      "euonair:weightPercent": 20,
+      "euonair:groupMode": {
+        "@id": "euvoc:group-mode/individual"
+      },
+      "assesses": [
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo2"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060#lo3"
+        }
+      ],
+      "euonair:aiCondition": {
+        "@type": "euonair:AiUsePolicy",
+        "euonair:permissionLevel": {
+          "@id": "euvoc:ai-permission/scaffolding-only"
+        },
+        "euonair:assessmentAiClass": {
+          "@id": "euvoc:assessment-ai-class/ai-restricted"
+        },
+        "euonair:interactionModeHint": {
+          "@id": "euvoc:ai-interaction/socratic"
+        },
+        "euonair:disclosureRequirement": {
+          "@id": "euvoc:ai-disclosure/statement"
+        },
+        "euonair:protectsOutcome": {
+          "@id": "https://example.edu/course-units/NLP-3060#lo2"
+        },
+        "euonair:note": {
+          "@value": "AI tools may explain concepts and point to errors, but must not write the attention or decoding code.",
+          "@language": "en"
+        }
+      }
+    }
+  ],
+  "euonair:gradingMode": {
+    "@id": "euvoc:grading/graded"
+  },
+  "euonair:gradingScale": "https://example.edu/regulations/grading-scale",
+  "coursePrerequisites": [
+    {
+      "@type": "Course",
+      "@id": "https://example.edu/course-units/ML-2010",
+      "courseCode": "ML-2010",
+      "name": "Machine Learning"
+    }
+  ],
+  "competencyRequired": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Write and debug Python programs that use NumPy arrays and common data-science libraries."
+    }
+  ],
+  "euonair:recommendedPriorKnowledge": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Basics of deep learning: neural networks, backpropagation and training with a deep-learning framework."
+    }
+  ],
+  "citation": [
+    {
+      "@type": "Book",
+      "name": "(Course textbook on natural language processing with language models — illustrative entry)"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Selected original papers and notebooks (provided in the LMS)"
+    }
+  ],
+  "euonair:scope": {
+    "@type": "euonair:ScopeStatement",
+    "euonair:includedTopic": [
+      "tokenization",
+      "word embeddings",
+      "attention and Transformer",
+      "decoding",
+      "prompting",
+      "retrieval-augmented generation",
+      "parameter-efficient fine-tuning",
+      "evaluation of NLP systems"
+    ],
+    "euonair:excludedTopic": [
+      "training large language models from scratch",
+      "speech signal processing in depth",
+      "linguistic theory beyond what NLP tasks need"
+    ],
+    "euonair:depthNote": {
+      "@value": "Speech recognition and synthesis are covered as applications only; the mathematics of training at scale is treated conceptually.",
+      "@language": "en"
+    }
+  },
+  "euonair:aiUsePolicy": {
+    "@type": "euonair:AiUsePolicy",
+    "euonair:permissionLevel": {
+      "@id": "euvoc:ai-permission/restricted-to-listed-purposes"
+    },
+    "euonair:permittedPurpose": [
+      {
+        "@id": "euvoc:ai-purpose/explanation"
+      },
+      {
+        "@id": "euvoc:ai-purpose/literature-search"
+      },
+      {
+        "@id": "euvoc:ai-purpose/code-assistance"
+      },
+      {
+        "@id": "euvoc:ai-purpose/exam-practice"
+      }
+    ],
+    "euonair:excludedPurpose": [
+      {
+        "@id": "euvoc:ai-purpose/generating-submitted-text"
+      }
+    ],
+    "euonair:disclosureRequirement": {
+      "@id": "euvoc:ai-disclosure/statement"
+    },
+    "euonair:verificationExpectation": {
+      "@id": "euvoc:ai-verification/verify-sources-and-facts"
+    },
+    "euonair:interactionModeHint": {
+      "@id": "euvoc:ai-interaction/guided"
+    },
+    "euonair:approvedTool": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Institutionally licensed AI assistant (illustrative)"
+      }
+    ],
+    "euonair:institutionalPolicy": "https://example.edu/policies/ai-in-teaching-and-assessment",
+    "euonair:note": {
+      "@value": "Assessment-specific rules override this course default. When in doubt, ask the module coordinator.",
+      "@language": "en"
+    },
+    "dateModified": "2026-09-15"
+  },
+  "euonair:aiTopic": [
+    "language models",
+    "responsible release of AI applications"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "usageInfo": "https://example.edu/catalogue/terms-of-use",
+  "euonair:responsibleContact": {
+    "@type": "ContactPoint",
+    "contactType": "module coordinator",
+    "email": "nlp-coordination@example.edu"
+  },
+  "euonair:openToExchangeStudents": true,
+  "euonair:languageRequirement": {
+    "@type": "DefinedTerm",
+    "inDefinedTermSet": "CEFR",
+    "termCode": "B2",
+    "name": "English B2"
+  },
+  "accessibilitySummary": "Lecture videos are captioned; notebooks and slides are provided in accessible formats.",
+  "accessMode": [
+    "textual",
+    "visual",
+    "auditory"
+  ],
+  "accessibilityFeature": [
+    "captions",
+    "structuralNavigation"
+  ],
+  "euonair:elmMapping": "https://example.edu/elm/NLP-3060",
+  "hasCourseInstance": [
+    {
+      "@id": "https://example.edu/course-units/NLP-3060/offerings/2027-ST",
+      "@type": [
+        "CourseInstance",
+        "euonair:CourseOffering"
+      ],
+      "name": "Natural Language Processing — summer term 2027",
+      "euonair:academicTerm": "2027 summer term",
+      "startDate": "2027-03-15",
+      "endDate": "2027-07-09",
+      "inLanguage": "en",
+      "courseMode": [
+        "blended"
+      ],
+      "euonair:synchronicity": {
+        "@id": "euvoc:synchronicity/mixed"
+      },
+      "instructor": {
+        "@type": "Person",
+        "name": "Lecturer A (fictitious)"
+      },
+      "courseSchedule": {
+        "@type": "Schedule",
+        "repeatFrequency": "P1W",
+        "byDay": {
+          "@id": "http://schema.org/Thursday"
+        },
+        "startTime": "09:45",
+        "endTime": "13:00"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "Main campus, Room C110 (illustrative)"
+      },
+      "maximumAttendeeCapacity": 40,
+      "euonair:assessmentComponent": [
+        {
+          "@id": "https://example.edu/course-units/NLP-3060/offerings/2027-ST#ac1",
+          "@type": "euonair:AssessmentComponent",
+          "euonair:specifiedBy": {
+            "@id": "https://example.edu/course-units/NLP-3060#ac1"
+          },
+          "euonair:weightPercent": 30,
+          "euonair:dueDate": "2027-07-16"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060/offerings/2027-ST#ac2",
+          "@type": "euonair:AssessmentComponent",
+          "euonair:specifiedBy": {
+            "@id": "https://example.edu/course-units/NLP-3060#ac2"
+          },
+          "euonair:weightPercent": 50,
+          "euonair:dueDate": "2027-07-02"
+        },
+        {
+          "@id": "https://example.edu/course-units/NLP-3060/offerings/2027-ST#ac3",
+          "@type": "euonair:AssessmentComponent",
+          "euonair:specifiedBy": {
+            "@id": "https://example.edu/course-units/NLP-3060#ac3"
+          },
+          "euonair:weightPercent": 20
+        }
+      ]
+    }
+  ],
+  "dateCreated": "2025-03-01",
+  "dateModified": "2026-09-15",
+  "version": "2.1",
+  "euonair:metadataRecord": {
+    "@id": "https://example.edu/course-units/NLP-3060#record",
+    "@type": "euonair:MetadataRecord",
+    "dcterms:conformsTo": {
+      "@id": "https://w3id.org/euonair/course/profile/0.9"
+    },
+    "euonair:recordLanguage": [
+      "en",
+      "de"
+    ],
+    "euonair:generationMethod": {
+      "@id": "euvoc:generation/ai-extracted-human-reviewed"
+    },
+    "isBasedOn": {
+      "@type": "DigitalDocument",
+      "name": "Module handbook BSc Artificial Intelligence, version 2026-03 (PDF)",
+      "url": "https://example.edu/handbooks/bsc-ai-2026-03.pdf",
+      "dateModified": "2026-03-09"
+    },
+    "creativeWorkStatus": {
+      "@id": "euvoc:review-status/approved"
+    },
+    "euonair:lastReviewed": "2026-09-15",
+    "maintainer": {
+      "@type": "Organization",
+      "name": "Example University of Applied Sciences, Programme Office Artificial Intelligence"
+    },
+    "euonair:validFrom": "2027-03-01",
+    "expires": "2029-02-28"
+  }
+}

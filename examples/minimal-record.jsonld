@@ -1,0 +1,205 @@
+{
+  "@context": [
+    "https://schema.org/",
+    {
+      "euonair": "https://w3id.org/euonair/course#",
+      "euvoc": "https://w3id.org/euonair/vocab/",
+      "dcterms": "http://purl.org/dc/terms/"
+    }
+  ],
+  "@id": "https://example.edu/course-units/NLP-3060",
+  "@type": [
+    "Course",
+    "euonair:CourseUnit"
+  ],
+  "schemaVersion": "https://w3id.org/euonair/course/profile/0.9",
+  "courseCode": "NLP-3060",
+  "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "https://example.edu/ns/course-codes",
+    "value": "NLP-3060"
+  },
+  "name": {
+    "@value": "Natural Language Processing",
+    "@language": "en"
+  },
+  "euonair:unitType": {
+    "@id": "euvoc:unit-type/module"
+  },
+  "provider": {
+    "@type": "CollegeOrUniversity",
+    "@id": "https://example.edu/",
+    "name": "Example University of Applied Sciences",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "DE"
+    }
+  },
+  "url": "https://example.edu/catalogue/NLP-3060",
+  "description": {
+    "@value": "Processing, understanding and generating language with classical models and Transformer-based language models; team mini-projects on building and evaluating NLP applications.",
+    "@language": "en"
+  },
+  "syllabusSections": [
+    {
+      "@type": "Syllabus",
+      "position": 1,
+      "name": "Language tasks and text data"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 2,
+      "name": "Classical models and embeddings"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 3,
+      "name": "Attention and the Transformer"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 4,
+      "name": "Language models: pretraining, decoding, prompting"
+    },
+    {
+      "@type": "Syllabus",
+      "position": 5,
+      "name": "Retrieval, fine-tuning and evaluation"
+    }
+  ],
+  "inLanguage": [
+    "en"
+  ],
+  "educationalLevel": {
+    "@type": "DefinedTerm",
+    "@id": "http://data.europa.eu/snb/eqf/6",
+    "termCode": "6",
+    "name": "EQF level 6"
+  },
+  "numberOfCredits": {
+    "@type": "QuantitativeValue",
+    "value": 5,
+    "unitText": "ECTS"
+  },
+  "timeRequired": "PT150H",
+  "euonair:workloadComponent": [
+    {
+      "@type": "euonair:WorkloadComponent",
+      "euonair:activityType": {
+        "@id": "euvoc:workload/contact-synchronous"
+      },
+      "euonair:hours": 45
+    },
+    {
+      "@type": "euonair:WorkloadComponent",
+      "euonair:activityType": {
+        "@id": "euvoc:workload/self-study"
+      },
+      "euonair:hours": 105
+    }
+  ],
+  "teaches": [
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo1",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO1",
+      "description": {
+        "@value": "Explain how a Transformer language model turns text into predictions.",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo2",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO2",
+      "description": {
+        "@value": "Implement and adapt an NLP solution with prompting, retrieval or fine-tuning.",
+        "@language": "en"
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#lo3",
+      "@type": [
+        "DefinedTerm",
+        "euonair:LearningOutcome"
+      ],
+      "termCode": "LO3",
+      "description": {
+        "@value": "Evaluate an NLP system with metrics that match the claim being made.",
+        "@language": "en"
+      }
+    }
+  ],
+  "euonair:learningActivity": [
+    {
+      "@type": "euonair:LearningActivity",
+      "euonair:activityType": {
+        "@id": "euvoc:activity/lecture"
+      }
+    },
+    {
+      "@type": "euonair:LearningActivity",
+      "euonair:activityType": {
+        "@id": "euvoc:activity/project-work"
+      }
+    }
+  ],
+  "euonair:assessmentComponent": [
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ac1",
+      "@type": "euonair:AssessmentComponent",
+      "euonair:assessmentMethod": {
+        "@id": "euvoc:assessment-method/oral-exam"
+      },
+      "euonair:weightPercent": 40,
+      "euonair:groupMode": {
+        "@id": "euvoc:group-mode/individual"
+      }
+    },
+    {
+      "@id": "https://example.edu/course-units/NLP-3060#ac2",
+      "@type": "euonair:AssessmentComponent",
+      "euonair:assessmentMethod": {
+        "@id": "euvoc:assessment-method/project-report"
+      },
+      "euonair:weightPercent": 60,
+      "euonair:groupMode": {
+        "@id": "euvoc:group-mode/group"
+      }
+    }
+  ],
+  "euonair:gradingMode": {
+    "@id": "euvoc:grading/graded"
+  },
+  "coursePrerequisites": [
+    {
+      "@id": "euonair:none"
+    }
+  ],
+  "citation": [
+    {
+      "@type": "CreativeWork",
+      "name": "Course textbook and notebooks (provided in the LMS)"
+    }
+  ],
+  "dateModified": "2026-09-15",
+  "euonair:metadataRecord": {
+    "@id": "https://example.edu/course-units/NLP-3060#record",
+    "@type": "euonair:MetadataRecord",
+    "dcterms:conformsTo": {
+      "@id": "https://w3id.org/euonair/course/profile/0.9"
+    },
+    "euonair:recordLanguage": [
+      "en"
+    ],
+    "euonair:generationMethod": {
+      "@id": "euvoc:generation/human-authored"
+    }
+  }
+}

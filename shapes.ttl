@@ -1,0 +1,228 @@
+@prefix schema: <http://schema.org/> .
+@prefix euonair: <https://w3id.org/euonair/course#> .
+@prefix euvoc: <https://w3id.org/euonair/vocab/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix lrmi: <http://purl.org/dcx/lrmi-terms/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix shapes: <https://w3id.org/euonair/course/shapes#> .
+
+# EUonAIR AI-Ready Course Description Profile 0.9: SHACL shapes.
+# Field shapes are generated from Annex A (cardinalities). Severity: core and mandatory record = sh:Violation,
+# AI-readiness = sh:Warning, other = sh:Info. Extension shapes without minCount/maxCount are descriptive only.
+# The hand-written core shapes at the end check nested core requirements.
+
+shapes:CourseUnitShape a sh:NodeShape ;
+    sh:targetClass euonair:CourseUnit ;
+    sh:targetSubjectsOf euonair:metadataRecord ;
+    sh:property [ sh:path schema:courseCode ; sh:name "C01 Identifier (code + scheme)" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:identifier ; sh:name "C01 Identifier (code + scheme)" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:name ; sh:name "C02 Title" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path euonair:unitType ; sh:name "C03 Unit type" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:provider ; sh:name "C04 Providing institution" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:url ; sh:name "C05 Description URL" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:description ; sh:name "C06 Content description" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:syllabusSections ; sh:name "C07 Content topics" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:inLanguage ; sh:name "C08 Language(s) of instruction" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:educationalLevel ; sh:name "C09 Qualification level" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:numberOfCredits ; sh:name "C10 ECTS credits" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:teaches ; sh:name "C13 Learning outcomes" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:coursePrerequisites ; sh:name "C17 Entry requirements" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:timeRequired ; sh:name "C11 Total workload" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:workloadComponent ; sh:name "C12 Workload breakdown" ; sh:severity sh:Violation ; sh:minCount 2 ] ;
+    sh:property [ sh:path euonair:learningActivity ; sh:name "C14 Learning and teaching activities" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path euonair:assessmentComponent ; sh:name "C15 Assessment components" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path euonair:gradingMode ; sh:name "C16 Grading mode" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:gradingScale ; sh:name "C16 Grading mode" ; sh:severity sh:Violation ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:citation ; sh:name "C19 Reading list and learning materials" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:competencyRequired ; sh:name "A07 Required competences" ; sh:severity sh:Warning ] ;
+    sh:property [ sh:path schema:audience ; sh:name "A08 Target group" ; sh:severity sh:Warning ] ;
+    sh:property [ sh:path euonair:scope ; sh:name "A10 Scope boundaries" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:recommendedPriorKnowledge ; sh:name "A20 Recommended prior knowledge" ; sh:severity sh:Warning ] ;
+    sh:property [ sh:path euonair:aiUsePolicy ; sh:name "A11 Course-level AI-use policy" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:license ; sh:name "A13 Licence and usage terms" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:usageInfo ; sh:name "A13 Licence and usage terms" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:alternateName ; sh:name "X01 Alternative / short title" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:abstract ; sh:name "X02 Abstract" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:keywords ; sh:name "X03 Keywords" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:about ; sh:name "X04 Subject area / discipline" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:about ; sh:name "X05 Topic descriptors" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:difficulty ; sh:name "X06 Difficulty" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:aiTopic ; sh:name "X08 AI-in-curriculum descriptors" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:aiLiteracyLevel ; sh:name "X08 AI-in-curriculum descriptors" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:interactivityType ; sh:name "X09 Interactivity type" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:educationalAlignment ; sh:name "X34 Professional relevance" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:isPartOf ; sh:name "X10 Unit structure" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:hasPart ; sh:name "X10 Unit structure" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:isPrerequisiteFor ; sh:name "X11 Use in other units / follow-up units" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path ( schema:provider schema:department ) ; sh:name "X12 Organisational unit" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:programmePlacement ; sh:name "X30 Programme placement" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:responsibleContact ; sh:name "X31 Responsible contact" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:workPlacement ; sh:name "X35 Work-placement component" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:openToExchangeStudents ; sh:name "X13 Open to exchange students" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:languageRequirement ; sh:name "X14 Language requirements" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:educationalCredentialAwarded ; sh:name "X15 Credential awarded" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:microCredentialStatus ; sh:name "X16 Micro-credential status" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:awardingBody ; sh:name "X17 Awarding body and country" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:qualityAssurance ; sh:name "X18 Quality-assurance type" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:recognisedEquivalent ; sh:name "X19 Recognition / equivalence decisions" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:elmMapping ; sh:name "X20 ELM export link" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:offers ; sh:name "X21 Cost and fees" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:isAccessibleForFree ; sh:name "X21 Cost and fees" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:accessConditions ; sh:name "X22 Access conditions" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:conditionsOfAccess ; sh:name "X22 Access conditions" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:technicalRequirement ; sh:name "X23 Technical requirements" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:accessMode ; sh:name "X24 Accessibility features and modes" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:accessModeSufficient ; sh:name "X24 Accessibility features and modes" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:accessibilityFeature ; sh:name "X24 Accessibility features and modes" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:accessibilityHazard ; sh:name "X25 Accessibility hazards" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:accessibilitySummary ; sh:name "X26 Accessibility summary" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:funder ; sh:name "X33 Funding / sponsor" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:funding ; sh:name "X33 Funding / sponsor" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:sponsor ; sh:name "X33 Funding / sponsor" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:plannedMode ; sh:name "X32 Mode of delivery" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:metadataRecord ; sh:name "R01 Record identifier" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:schemaVersion ; sh:name "R02 Profile conformance" ; sh:severity sh:Violation ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:dateCreated ; sh:name "R03 Date created" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:dateModified ; sh:name "R04 Date modified" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:version ; sh:name "R05 Version" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:replaces ; sh:name "R13 Version relations" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:isReplacedBy ; sh:name "R13 Version relations" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:translationOfWork ; sh:name "R14 Language versions of the description" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:workTranslation ; sh:name "R14 Language versions of the description" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:translator ; sh:name "R14 Language versions of the description" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:hasCourseInstance ; sh:name "O01 Offering identification" ; sh:severity sh:Info ] .
+
+shapes:LearningOutcomeShape a sh:NodeShape ;
+    sh:targetClass euonair:LearningOutcome ;
+    sh:targetObjectsOf schema:teaches ;
+    sh:property [ sh:path euonair:cognitiveLevel ; sh:name "A01 Outcome cognitive level" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:competenceCategory ; sh:name "A02 Outcome competence category" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:contributesTo ; sh:name "A03 Link to programme outcomes" ; sh:severity sh:Warning ] ;
+    sh:property [ sh:path euonair:relatedSkill ; sh:name "X07 External framework alignment" ; sh:severity sh:Info ] .
+
+shapes:AssessmentComponentShape a sh:NodeShape ;
+    sh:targetClass euonair:AssessmentComponent ;
+    sh:property [ sh:path schema:assesses ; sh:name "A04 Assessed outcomes" ; sh:severity sh:Warning ] ;
+    sh:property [ sh:path euonair:assessmentCriteria ; sh:name "A06 Assessment criteria" ; sh:severity sh:Warning ] ;
+    sh:property [ sh:path euonair:aiCondition ; sh:name "A12 Assessment-level AI condition" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:assessmentSetting ; sh:name "A21 Assessment setting" ; sh:severity sh:Warning ; sh:maxCount 1 ] .
+
+shapes:LearningActivityShape a sh:NodeShape ;
+    sh:targetClass euonair:LearningActivity ;
+    sh:targetObjectsOf euonair:learningActivity ;
+    sh:property [ sh:path euonair:supportsOutcome ; sh:name "A05 Activity → outcome links" ; sh:severity sh:Warning ] .
+
+shapes:MetadataRecordShape a sh:NodeShape ;
+    sh:targetClass euonair:MetadataRecord ;
+    sh:targetObjectsOf euonair:metadataRecord ;
+    sh:property [ sh:path dcterms:conformsTo ; sh:name "R02 Profile conformance" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:validFrom ; sh:name "R06 Period of validity" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:expires ; sh:name "R06 Period of validity" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:recordLanguage ; sh:name "R07 Language(s) of the record" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:isBasedOn ; sh:name "R08 Source document" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:generationMethod ; sh:name "R09 Generation method" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:digitalSourceType ; sh:name "R09 Generation method" ; sh:severity sh:Violation ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:creativeWorkStatus ; sh:name "R10 Review / approval status" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:lastReviewed ; sh:name "R11 Last reviewed" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:maintainer ; sh:name "R12 Responsible party" ; sh:severity sh:Info ; sh:maxCount 1 ] .
+
+shapes:CourseInstanceShape a sh:NodeShape ;
+    sh:targetClass schema:CourseInstance ;
+    sh:targetObjectsOf schema:hasCourseInstance ;
+    sh:property [ sh:path schema:startDate ; sh:name "O01 Offering identification" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:endDate ; sh:name "O01 Offering identification" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:duration ; sh:name "O01 Offering identification" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:academicTerm ; sh:name "O01 Offering identification" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:instructor ; sh:name "O02 Teaching staff" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:courseSchedule ; sh:name "O03 Schedule and session plan" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path euonair:assessmentComponent ; sh:name "O04 Offering assessment parameters" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:location ; sh:name "O05 Location / campus" ; sh:severity sh:Info ] ;
+    sh:property [ sh:path schema:maximumAttendeeCapacity ; sh:name "O06 Capacity" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path schema:eventStatus ; sh:name "O07 Offering status and application deadline" ; sh:severity sh:Info ; sh:maxCount 1 ] ;
+    sh:property [ sh:path euonair:applicationDeadline ; sh:name "O07 Offering status and application deadline" ; sh:severity sh:Info ; sh:maxCount 1 ] .
+
+# ---------------------------------------------------------------------------------------------------------
+# Hand-written core shapes. They check nested core requirements that the field table cannot express and
+# close targeting gaps (explicit targets on the objects of the linking properties; entry check on schema:Course).
+# ---------------------------------------------------------------------------------------------------------
+
+shapes:CourseEntryShape a sh:NodeShape ;
+    sh:targetClass schema:Course ;
+    sh:name "Entry check" ;
+    sh:message "A schema:Course that is described (not only referenced as prerequisite, part or follow-up unit) must be typed euonair:CourseUnit." ;
+    sh:severity sh:Violation ;
+    sh:or (
+        [ sh:path rdf:type ; sh:hasValue euonair:CourseUnit ]
+        [ sh:path [ sh:inversePath schema:coursePrerequisites ] ; sh:minCount 1 ]
+        [ sh:path [ sh:inversePath schema:hasPart ] ; sh:minCount 1 ]
+        [ sh:path [ sh:inversePath schema:isPartOf ] ; sh:minCount 1 ]
+        [ sh:path [ sh:inversePath euonair:isPrerequisiteFor ] ; sh:minCount 1 ]
+    ) .
+
+shapes:CourseUnitCoreShape a sh:NodeShape ;
+    sh:targetClass euonair:CourseUnit ;
+    sh:targetSubjectsOf euonair:metadataRecord ;
+    sh:property [ sh:path rdf:type ; sh:name "Course-unit type" ; sh:severity sh:Violation ; sh:hasValue euonair:CourseUnit ] ;
+    sh:property [ sh:path rdf:type ; sh:name "Course type" ; sh:severity sh:Violation ; sh:hasValue schema:Course ] ;
+    sh:property [ sh:path euonair:unitType ; sh:name "C03 Unit type" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ; sh:pattern "^https://w3id.org/euonair/vocab/unit-type/" ] ;
+    sh:property [ sh:path schema:educationalLevel ; sh:name "C09 Qualification level" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ; sh:pattern "^http://data\\.europa\\.eu/snb/eqf/[1-8]$" ] ;
+    sh:property [ sh:path schema:numberOfCredits ; sh:name "C10 ECTS credits" ; sh:severity sh:Violation ; sh:class schema:QuantitativeValue ] ;
+    sh:property [ sh:path euonair:assessmentComponent ; sh:name "C15 Assessment components" ; sh:severity sh:Violation ; sh:node shapes:AssessmentComponentCoreShape ] ;
+    sh:property [ sh:path euonair:gradingMode ; sh:name "C16 Grading mode" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ; sh:pattern "^https://w3id.org/euonair/vocab/grading/" ] .
+
+shapes:ProviderCoreShape a sh:NodeShape ;
+    sh:targetObjectsOf schema:provider ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+    sh:property [ sh:path schema:name ; sh:name "C04 Provider name" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path ( schema:address schema:addressCountry ) ; sh:name "C04 Provider country" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:pattern "^[A-Z]{2}$" ] .
+
+shapes:SyllabusCoreShape a sh:NodeShape ;
+    sh:targetObjectsOf schema:syllabusSections ;
+    sh:property [ sh:path schema:name ; sh:name "C07 Topic name" ; sh:severity sh:Violation ; sh:minCount 1 ] ;
+    sh:property [ sh:path schema:position ; sh:name "C07 Topic position" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ] .
+
+shapes:CreditsCoreShape a sh:NodeShape ;
+    sh:targetObjectsOf schema:numberOfCredits ;
+    sh:property [ sh:path schema:value ; sh:name "C10 ECTS credits (value)" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:minExclusive 0 ] ;
+    sh:property [ sh:path schema:unitText ; sh:name "C10 ECTS credits (unit)" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:hasValue "ECTS" ] .
+
+shapes:WorkloadComponentCoreShape a sh:NodeShape ;
+    sh:targetObjectsOf euonair:workloadComponent ;
+    sh:property [ sh:path euonair:activityType ; sh:name "C12 Workload type" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path euonair:hours ; sh:name "C12 Workload hours" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:minInclusive 0 ] .
+
+shapes:LearningOutcomeCoreShape a sh:NodeShape ;
+    sh:targetClass euonair:LearningOutcome ;
+    sh:targetObjectsOf schema:teaches ;
+    sh:nodeKind sh:IRI ;
+    sh:severity sh:Violation ;
+    sh:property [ sh:path schema:description ; sh:name "C13 Outcome statement" ; sh:severity sh:Violation ; sh:minCount 1 ] .
+
+shapes:LearningActivityCoreShape a sh:NodeShape ;
+    sh:targetObjectsOf euonair:learningActivity ;
+    sh:property [ sh:path euonair:activityType ; sh:name "C14 Activity type" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] .
+
+# Applied through sh:node from the course unit, so that the offering's component nodes (final weights only) are not affected.
+shapes:AssessmentComponentCoreShape a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:path euonair:assessmentMethod ; sh:name "C15 Assessment method" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path euonair:groupMode ; sh:name "C15 Group mode" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( <https://w3id.org/euonair/vocab/group-mode/individual> <https://w3id.org/euonair/vocab/group-mode/group> <https://w3id.org/euonair/vocab/group-mode/mixed> ) ] ;
+    sh:property [ sh:path euonair:weightPercent ; sh:name "C15 Weight" ; sh:maxCount 1 ; sh:minInclusive 0 ; sh:maxInclusive 100 ] ;
+    sh:property [ sh:path euonair:weightMin ; sh:name "C15 Weight range (min)" ; sh:maxCount 1 ; sh:minInclusive 0 ; sh:maxInclusive 100 ] ;
+    sh:property [ sh:path euonair:weightMax ; sh:name "C15 Weight range (max)" ; sh:maxCount 1 ; sh:minInclusive 0 ; sh:maxInclusive 100 ] ;
+    sh:xone (
+        [ sh:path euonair:weightPercent ; sh:minCount 1 ]
+        [ sh:property [ sh:path euonair:weightMin ; sh:minCount 1 ] , [ sh:path euonair:weightMax ; sh:minCount 1 ] ]
+    ) .
+
+shapes:MetadataRecordCoreShape a sh:NodeShape ;
+    sh:targetObjectsOf euonair:metadataRecord ;
+    sh:nodeKind sh:IRI ;
+    sh:property [ sh:path rdf:type ; sh:name "R01 Record type" ; sh:severity sh:Violation ; sh:hasValue euonair:MetadataRecord ] ;
+    sh:property [ sh:path dcterms:conformsTo ; sh:name "R02 Profile conformance" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path euonair:generationMethod ; sh:name "R09 Generation method" ; sh:severity sh:Violation ;
+        sh:in ( <https://w3id.org/euonair/vocab/generation/human-authored> <https://w3id.org/euonair/vocab/generation/ai-extracted> <https://w3id.org/euonair/vocab/generation/ai-extracted-human-reviewed> ) ] .

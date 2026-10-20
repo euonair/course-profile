@@ -1,0 +1,610 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://w3id.org/euonair/course/profile/0.9/core.schema.json",
+  "title": "EUonAIR AI-Ready Course Description Profile - core tier",
+  "description": "Validates the compacted JSON-LD form of a course-unit record against the CORE tier and the mandatory RECORD fields. Recommended and optional tiers are allowed but not checked (except the value sets of cognitive level and competence category when present). Semantic rules (sums, ranges, references, AI-policy consistency) are left to a semantic validator. Placeholder namespace https://w3id.org/euonair/course#.",
+  "type": "object",
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "courseCode",
+    "identifier",
+    "name",
+    "euonair:unitType",
+    "provider",
+    "url",
+    "description",
+    "syllabusSections",
+    "inLanguage",
+    "educationalLevel",
+    "numberOfCredits",
+    "timeRequired",
+    "euonair:workloadComponent",
+    "teaches",
+    "euonair:learningActivity",
+    "euonair:assessmentComponent",
+    "euonair:gradingMode",
+    "coursePrerequisites",
+    "citation",
+    "dateModified",
+    "euonair:metadataRecord"
+  ],
+  "properties": {
+    "@context": {
+      "type": "array",
+      "minItems": 1
+    },
+    "@id": {
+      "$ref": "#/$defs/iri"
+    },
+    "@type": {
+      "type": "array",
+      "allOf": [
+        {
+          "contains": {
+            "const": "Course"
+          }
+        },
+        {
+          "contains": {
+            "const": "euonair:CourseUnit"
+          }
+        }
+      ]
+    },
+    "courseCode": {
+      "type": "string",
+      "minLength": 1
+    },
+    "identifier": {
+      "type": "object",
+      "required": [
+        "@type",
+        "propertyID",
+        "value"
+      ],
+      "properties": {
+        "@type": {
+          "const": "PropertyValue"
+        },
+        "propertyID": {
+          "$ref": "#/$defs/iri"
+        },
+        "value": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "name": {
+      "$ref": "#/$defs/langStrings"
+    },
+    "euonair:unitType": {
+      "$ref": "#/$defs/vocabRef",
+      "properties": {
+        "@id": {
+          "pattern": "^(euvoc:|https://w3id\\.org/euonair/vocab/)unit-type/[a-z0-9-]+$"
+        }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "required": [
+        "@id",
+        "name",
+        "address"
+      ],
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/iri"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "address": {
+          "type": "object",
+          "required": [
+            "addressCountry"
+          ],
+          "properties": {
+            "addressCountry": {
+              "type": "string",
+              "pattern": "^[A-Z]{2}$",
+              "description": "ISO 3166-1 alpha-2"
+            }
+          }
+        }
+      }
+    },
+    "url": {
+      "$ref": "#/$defs/iri"
+    },
+    "description": {
+      "$ref": "#/$defs/langStrings"
+    },
+    "syllabusSections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "@type",
+          "position",
+          "name"
+        ],
+        "properties": {
+          "@type": {
+            "const": "Syllabus"
+          },
+          "position": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "timeRequired": {
+            "$ref": "#/$defs/isoDuration"
+          }
+        }
+      }
+    },
+    "inLanguage": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/bcp47"
+      }
+    },
+    "educationalLevel": {
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "^http://data\\.europa\\.eu/snb/eqf/[1-8]$"
+        }
+      }
+    },
+    "numberOfCredits": {
+      "type": "object",
+      "required": [
+        "value",
+        "unitText"
+      ],
+      "properties": {
+        "value": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "unitText": {
+          "const": "ECTS"
+        }
+      }
+    },
+    "timeRequired": {
+      "$ref": "#/$defs/isoDuration"
+    },
+    "euonair:workloadComponent": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "euonair:activityType",
+          "euonair:hours"
+        ],
+        "properties": {
+          "euonair:activityType": {
+            "$ref": "#/$defs/vocabRef"
+          },
+          "euonair:hours": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "teaches": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/learningOutcome"
+      }
+    },
+    "euonair:learningActivity": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "euonair:activityType"
+        ],
+        "properties": {
+          "euonair:activityType": {
+            "$ref": "#/$defs/vocabRef"
+          }
+        }
+      }
+    },
+    "euonair:assessmentComponent": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/assessmentComponent"
+      }
+    },
+    "euonair:gradingMode": {
+      "$ref": "#/$defs/vocabRef",
+      "properties": {
+        "@id": {
+          "pattern": "^(euvoc:|https://w3id\\.org/euonair/vocab/)grading/[a-z0-9-]+$"
+        }
+      }
+    },
+    "coursePrerequisites": {
+      "$ref": "#/$defs/requirementList"
+    },
+    "euonair:recommendedPriorKnowledge": {
+      "$ref": "#/$defs/requirementList"
+    },
+    "citation": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/citationItem"
+      }
+    },
+    "dateModified": {
+      "type": "string",
+      "format": "date"
+    },
+    "euonair:metadataRecord": {
+      "type": "object",
+      "required": [
+        "@id",
+        "dcterms:conformsTo",
+        "euonair:recordLanguage",
+        "euonair:generationMethod"
+      ],
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/iri"
+        },
+        "dcterms:conformsTo": {
+          "$ref": "#/$defs/vocabRef"
+        },
+        "euonair:recordLanguage": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/bcp47"
+          }
+        },
+        "euonair:generationMethod": {
+          "type": "object",
+          "required": [
+            "@id"
+          ],
+          "properties": {
+            "@id": {
+              "enum": [
+                "euvoc:generation/human-authored",
+                "euvoc:generation/ai-extracted",
+                "euvoc:generation/ai-extracted-human-reviewed"
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "iri": {
+      "type": "string",
+      "pattern": "^(https?://|[a-z]+:)\\S+$"
+    },
+    "bcp47": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+    },
+    "isoDuration": {
+      "type": "string",
+      "pattern": "^P(?!$)(\\d+Y)?(\\d+M)?(\\d+W)?(\\d+D)?(T(?=\\d)(\\d+H)?(\\d+M)?(\\d+S)?)?$"
+    },
+    "vocabRef": {
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/iri"
+        }
+      }
+    },
+    "langString": {
+      "type": "object",
+      "required": [
+        "@value",
+        "@language"
+      ],
+      "properties": {
+        "@value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "@language": {
+          "$ref": "#/$defs/bcp47"
+        }
+      }
+    },
+    "langStrings": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/langString"
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/langString"
+          }
+        }
+      ]
+    },
+    "learningOutcome": {
+      "type": "object",
+      "required": [
+        "@id",
+        "@type",
+        "description"
+      ],
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/iri"
+        },
+        "@type": {
+          "type": "array",
+          "contains": {
+            "const": "euonair:LearningOutcome"
+          }
+        },
+        "termCode": {
+          "type": "string"
+        },
+        "description": {
+          "$ref": "#/$defs/langStrings"
+        },
+        "euonair:cognitiveLevel": {
+          "type": "object",
+          "required": [
+            "@id"
+          ],
+          "properties": {
+            "@id": {
+              "enum": [
+                "euvoc:cognitive-level/remember",
+                "euvoc:cognitive-level/understand",
+                "euvoc:cognitive-level/apply",
+                "euvoc:cognitive-level/analyse",
+                "euvoc:cognitive-level/evaluate",
+                "euvoc:cognitive-level/create"
+              ]
+            }
+          }
+        },
+        "euonair:competenceCategory": {
+          "type": "object",
+          "required": [
+            "@id"
+          ],
+          "properties": {
+            "@id": {
+              "enum": [
+                "euvoc:competence-category/knowledge",
+                "euvoc:competence-category/skills",
+                "euvoc:competence-category/responsibility-autonomy"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "assessmentComponent": {
+      "type": "object",
+      "required": [
+        "@id",
+        "euonair:assessmentMethod",
+        "euonair:groupMode"
+      ],
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/iri"
+        },
+        "euonair:assessmentMethod": {
+          "$ref": "#/$defs/vocabRef"
+        },
+        "euonair:groupMode": {
+          "type": "object",
+          "required": [
+            "@id"
+          ],
+          "properties": {
+            "@id": {
+              "enum": [
+                "euvoc:group-mode/individual",
+                "euvoc:group-mode/group",
+                "euvoc:group-mode/mixed"
+              ]
+            }
+          }
+        },
+        "euonair:weightPercent": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "euonair:weightMin": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "euonair:weightMax": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        }
+      },
+      "oneOf": [
+        {
+          "description": "exact weight",
+          "required": [
+            "euonair:weightPercent"
+          ],
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "euonair:weightMin"
+                ]
+              },
+              {
+                "required": [
+                  "euonair:weightMax"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "description": "weight range",
+          "required": [
+            "euonair:weightMin",
+            "euonair:weightMax"
+          ],
+          "not": {
+            "required": [
+              "euonair:weightPercent"
+            ]
+          }
+        }
+      ]
+    },
+    "requirementList": {
+      "description": "Either the single explicit value {\"@id\": \"euonair:none\"}, or one or more requirements.",
+      "oneOf": [
+        {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": {
+            "$ref": "#/$defs/noneRef"
+          }
+        },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/requirementItem"
+          }
+        }
+      ]
+    },
+    "nonEmptyName": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "$ref": "#/$defs/langStrings"
+        }
+      ]
+    },
+    "citationItem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/nonEmptyName"
+        },
+        "@id": {
+          "$ref": "#/$defs/iri"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "name"
+          ]
+        },
+        {
+          "required": [
+            "@id"
+          ]
+        }
+      ]
+    },
+    "noneRef": {
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "const": "euonair:none"
+        }
+      }
+    },
+    "requirementItem": {
+      "description": "A reference (not euonair:none), a text, a language-tagged text, or an object with a name.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "$ref": "#/$defs/langString"
+        },
+        {
+          "type": "object",
+          "required": [
+            "@id"
+          ],
+          "properties": {
+            "@id": {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/iri"
+                },
+                {
+                  "not": {
+                    "const": "euonair:none"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "name"
+          ],
+          "properties": {
+            "name": {
+              "$ref": "#/$defs/nonEmptyName"
+            }
+          },
+          "not": {
+            "required": [
+              "@value"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
