@@ -493,7 +493,9 @@
   "euonair:gradingMode": {
     "@id": "euvoc:grading/graded"
   },
-  "euonair:gradingScale": "https://example.edu/regulations/grading-scale",
+  "euonair:gradingScale": {
+    "@id": "https://example.edu/regulations/grading-scale"
+  },
   "coursePrerequisites": [
     {
       "@type": "Course",
@@ -585,7 +587,9 @@
         "name": "Institutionally licensed AI assistant (illustrative)"
       }
     ],
-    "euonair:institutionalPolicy": "https://example.edu/policies/ai-in-teaching-and-assessment",
+    "euonair:institutionalPolicy": {
+      "@id": "https://example.edu/policies/ai-in-teaching-and-assessment"
+    },
     "euonair:note": {
       "@value": "Assessment-specific rules override this course default. When in doubt, ask the module coordinator.",
       "@language": "en"
@@ -620,7 +624,9 @@
     "captions",
     "structuralNavigation"
   ],
-  "euonair:elmMapping": "https://example.edu/elm/NLP-3060",
+  "euonair:elmMapping": {
+    "@id": "https://example.edu/elm/NLP-3060"
+  },
   "hasCourseInstance": [
     {
       "@id": "https://example.edu/course-units/NLP-3060/offerings/2027-ST",
@@ -712,6 +718,7 @@
     "creativeWorkStatus": {
       "@id": "euvoc:review-status/approved"
     },
+    "dcterms:dateAccepted": "2026-09-15",
     "euonair:lastReviewed": "2026-09-15",
     "maintainer": {
       "@type": "Organization",
