@@ -1,7 +1,13 @@
-# w3id.org/euonair — EUonAIR AI-Ready Course Description Profile
-# Copy of the rules submitted to https://github.com/perma-id/w3id.org (folder euonair/).
-Options +FollowSymLinks
+# EUonAIR — persistent identifiers of the EUonAIR European University alliance
+# EUonAIR AI-Ready Course Description Profile: https://github.com/euonair/course-profile
+# Maintainers:
+#   Carsten Lanquillon, Heilbronn University of Applied Sciences (GitHub: @lanquillon)
+#   Yannik Langer, Heilbronn University of Applied Sciences (GitHub: @yanniklanger)
+
 RewriteEngine on
+
+# Identifier root
+RewriteRule ^$ https://euonair.github.io/course-profile/ [R=302,L]
 
 # Vocabulary values: https://w3id.org/euonair/vocab/<scheme>/<value>
 RewriteRule ^vocab/?$ https://euonair.github.io/course-profile/vocab/ [R=302,L]
