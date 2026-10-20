@@ -10,4 +10,4 @@ EUonAIR AI-Ready Course Description Profile (https://github.com/euonair/course-p
 ## Maintainers
 
 - Carsten Lanquillon, Heilbronn University of Applied Sciences — GitHub: @lanquillon
-- (second maintainer — GitHub handle to be added)
+- Yannik Langer, Heilbronn University of Applied Sciences — GitHub: @yanniklanger
