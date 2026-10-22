@@ -15,7 +15,7 @@ A metadata application profile for course descriptions that AI tools and course 
 
 | File | Content |
 |---|---|
-| `profile.xlsx` | Element list with definitions, types, cardinalities, vocabularies, mappings (ECTS Users' Guide, ELM, OCCAPI, IEEE LOM, Dublin Core) and evidence |
+| `profile.xlsx` | Element list with definitions, types, cardinalities, vocabularies, mappings (ECTS Users' Guide, ELM, OCCAPI, IEEE LOM, Dublin Core) and the basis of each element |
 | `context.jsonld` | JSON-LD 1.1 context with the namespaces of the profile |
 | `core.schema.json` | JSON Schema (Draft 2020-12) for the core and the mandatory record fields |
 | `shapes.ttl` | SHACL shapes for validation on the RDF graph |
