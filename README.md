@@ -2,7 +2,7 @@
 
 Version 0.9 · namespace `https://w3id.org/euonair/course#` · vocabularies `https://w3id.org/euonair/vocab/`
 
-A metadata application profile for course descriptions that AI tools and course platforms can use: learning outcomes with cognitive level, workload, assessment with outcome links, prerequisites and machine-readable rules for AI use per course and assessment. It is the result of EUonAIR Milestone MS4, *AI-Ready Course Descriptions* (Work Package 4, Task 4.6, Heilbronn University of Applied Sciences).
+A metadata application profile for course descriptions that AI tools and course platforms can use: learning outcomes with cognitive level, workload, assessment with outcome links, prerequisites and machine-readable rules for AI use per course and assessment. It is the result of EUonAIR Milestone MS10, *AI-Ready Course Descriptions* (Work Package 4, Task 4.6, Heilbronn University of Applied Sciences).
 
 | Tier | Elements | Conformance |
 |---|---|---|
