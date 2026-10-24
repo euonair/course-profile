@@ -450,6 +450,9 @@
         },
         "euonair:gatedBy": {
           "@id": "https://example.edu/course-units/NLP-3060#ac3"
+        },
+        "euonair:materialInput": {
+          "@id": "euvoc:ai-material-input/institutional-tools-only"
         }
       }
     },
@@ -492,6 +495,9 @@
         "euonair:note": {
           "@value": "AI tools may explain concepts and point to errors, but must not write the attention or decoding code.",
           "@language": "en"
+        },
+        "euonair:materialInput": {
+          "@id": "euvoc:ai-material-input/institutional-tools-only"
         }
       }
     }
