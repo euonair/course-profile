@@ -353,7 +353,7 @@
       }
     },
     "langStrings": {
-      "oneOf": [
+      "anyOf": [
         {
           "$ref": "#/$defs/langString"
         },
@@ -460,7 +460,7 @@
           "$ref": "#/$defs/aiUsePolicy"
         }
       },
-      "oneOf": [
+      "anyOf": [
         {
           "description": "exact weight",
           "required": [
@@ -497,7 +497,7 @@
     },
     "requirementList": {
       "description": "Either the single explicit value {\"@id\": \"euonair:none\"}, or one or more requirements.",
-      "oneOf": [
+      "anyOf": [
         {
           "type": "array",
           "minItems": 1,
@@ -699,11 +699,13 @@
             "euvoc:ai-permission/scaffolding-only",
             "euvoc:ai-permission/permitted-with-disclosure",
             "euvoc:ai-permission/unrestricted",
+            "euvoc:ai-permission/required",
             "https://w3id.org/euonair/vocab/ai-permission/not-permitted",
             "https://w3id.org/euonair/vocab/ai-permission/restricted-to-listed-purposes",
             "https://w3id.org/euonair/vocab/ai-permission/scaffolding-only",
             "https://w3id.org/euonair/vocab/ai-permission/permitted-with-disclosure",
-            "https://w3id.org/euonair/vocab/ai-permission/unrestricted"
+            "https://w3id.org/euonair/vocab/ai-permission/unrestricted",
+            "https://w3id.org/euonair/vocab/ai-permission/required"
           ]
         }
       }
@@ -725,6 +727,42 @@
             "https://w3id.org/euonair/vocab/ai-disclosure/statement",
             "https://w3id.org/euonair/vocab/ai-disclosure/inline-marking",
             "https://w3id.org/euonair/vocab/ai-disclosure/detailed-log"
+          ]
+        }
+      }
+    },
+    "aiDisclosureScope": {
+      "description": "Closed scheme euvoc:ai-disclosure-scope/ (prefixed or full IRI)",
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "properties": {
+        "@id": {
+          "enum": [
+            "euvoc:ai-disclosure-scope/all-use",
+            "euvoc:ai-disclosure-scope/substantial-use",
+            "https://w3id.org/euonair/vocab/ai-disclosure-scope/all-use",
+            "https://w3id.org/euonair/vocab/ai-disclosure-scope/substantial-use"
+          ]
+        }
+      }
+    },
+    "aiMaterialInput": {
+      "description": "Closed scheme euvoc:ai-material-input/ (prefixed or full IRI)",
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "properties": {
+        "@id": {
+          "enum": [
+            "euvoc:ai-material-input/not-permitted",
+            "euvoc:ai-material-input/institutional-tools-only",
+            "euvoc:ai-material-input/permitted",
+            "https://w3id.org/euonair/vocab/ai-material-input/not-permitted",
+            "https://w3id.org/euonair/vocab/ai-material-input/institutional-tools-only",
+            "https://w3id.org/euonair/vocab/ai-material-input/permitted"
           ]
         }
       }
@@ -785,6 +823,25 @@
         },
         "euonair:institutionalPolicy": {
           "$ref": "#/$defs/ref"
+        },
+        "euonair:disclosureScope": {
+          "$ref": "#/$defs/aiDisclosureScope"
+        },
+        "euonair:materialInput": {
+          "$ref": "#/$defs/aiMaterialInput"
+        },
+        "euonair:gatedBy": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ref"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ref"
+              }
+            }
+          ]
         }
       }
     }

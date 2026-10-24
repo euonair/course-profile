@@ -438,12 +438,18 @@
         "euonair:disclosureRequirement": {
           "@id": "euvoc:ai-disclosure/detailed-log"
         },
+        "euonair:disclosureScope": {
+          "@id": "euvoc:ai-disclosure-scope/all-use"
+        },
         "euonair:verificationExpectation": {
           "@id": "euvoc:ai-verification/verify-and-be-able-to-explain"
         },
         "euonair:note": {
           "@value": "AI assistance for code is allowed. The evaluation report and the decision memo must be written by the team; append the prompt log and state how outputs were checked.",
           "@language": "en"
+        },
+        "euonair:gatedBy": {
+          "@id": "https://example.edu/course-units/NLP-3060#ac3"
         }
       }
     },
@@ -575,6 +581,9 @@
     "euonair:disclosureRequirement": {
       "@id": "euvoc:ai-disclosure/statement"
     },
+    "euonair:disclosureScope": {
+      "@id": "euvoc:ai-disclosure-scope/substantial-use"
+    },
     "euonair:verificationExpectation": {
       "@id": "euvoc:ai-verification/verify-sources-and-facts"
     },
@@ -587,6 +596,9 @@
         "name": "Institutionally licensed AI assistant (illustrative)"
       }
     ],
+    "euonair:materialInput": {
+      "@id": "euvoc:ai-material-input/institutional-tools-only"
+    },
     "euonair:institutionalPolicy": {
       "@id": "https://example.edu/policies/ai-in-teaching-and-assessment"
     },

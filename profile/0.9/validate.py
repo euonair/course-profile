@@ -188,9 +188,13 @@ def run(files: Files) -> tuple[list[tuple[str, str, str, bool]], dict[str, int]]
     both("ELM export link as string literal", lambda r: r.update({"euonair:elmMapping": "https://example.edu/elm/NLP-3060"}), False)
     both("institutional AI policy as string literal", lambda r: r["euonair:aiUsePolicy"].update(
         {"euonair:institutionalPolicy": "https://example.edu/policies/ai-in-teaching-and-assessment"}), False)
+    both("AI-use gate as string literal", lambda r: r["euonair:assessmentComponent"][1]["euonair:aiCondition"].update(
+        {"euonair:gatedBy": "https://example.edu/course-units/NLP-3060#ac3"}), False)
     both("undefined grading value euvoc:grading/not-a-real-mode", lambda r: r.update({"euonair:gradingMode": {"@id": "euvoc:grading/not-a-real-mode"}}), False)
     both("undefined disclosure value euvoc:ai-disclosure/not-a-real-value", lambda r: r["euonair:aiUsePolicy"].update(
         {"euonair:disclosureRequirement": {"@id": "euvoc:ai-disclosure/not-a-real-value"}}), False)
+    both("undefined value for input of course materials euvoc:ai-material-input/not-a-real-value", lambda r: r["euonair:aiUsePolicy"].update(
+        {"euonair:materialInput": {"@id": "euvoc:ai-material-input/not-a-real-value"}}), False)
     both("undefined review status euvoc:review-status/not-a-real-status", lambda r: r["euonair:metadataRecord"].update(
         {"creativeWorkStatus": {"@id": "euvoc:review-status/not-a-real-status"}}), False)
     both("full IRI for grading mode", lambda r: r.update({"euonair:gradingMode": {"@id": voc + "grading/pass-fail"}}), True)
