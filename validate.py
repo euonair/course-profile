@@ -215,7 +215,7 @@ def main() -> None:
     log.info("%d tests, %d passed; triples: %s", len(results), len(results) - len(failed),
              ", ".join(f"{k} {v}" for k, v in triples.items()))
     log.info("Not checked (semantic validator, Annex B.3 of the MS10 report): sums of hours and weights, hours per credit, "
-             "weight-range feasibility, outcome references, AI-policy consistency. Passing shows that the records meet the "
+             "weight-range feasibility, offering references, outcome references, topic positions, AI-policy consistency. Passing shows that the records meet the "
              "implemented constraints, not conformance with every rule of the profile.")
     sys.exit(1 if failed else 0)
 
