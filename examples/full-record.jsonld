@@ -455,7 +455,21 @@
           "@id": "euvoc:ai-material-input/institutional-tools-only"
         },
         "euonair:beforeGate": {
-          "@id": "euvoc:before-gate/course-default"
+          "@type": "euonair:AiUsePolicy",
+          "euonair:permissionLevel": {
+            "@id": "euvoc:ai-permission/restricted-to-listed-purposes"
+          },
+          "euonair:permittedPurpose": [
+            {
+              "@id": "euvoc:ai-purpose/explanation"
+            }
+          ],
+          "euonair:interactionModeHint": {
+            "@id": "euvoc:ai-interaction/guided"
+          },
+          "euonair:disclosureRequirement": {
+            "@id": "euvoc:ai-disclosure/statement"
+          }
         }
       }
     },

@@ -197,12 +197,8 @@ def run(files: Files) -> tuple[list[tuple[str, str, str, bool]], dict[str, int]]
         {"euonair:materialInput": {"@id": "euvoc:ai-material-input/not-a-real-value"}}), False)
     both("undefined review status euvoc:review-status/not-a-real-status", lambda r: r["euonair:metadataRecord"].update(
         {"creativeWorkStatus": {"@id": "euvoc:review-status/not-a-real-status"}}), False)
-    inner = {"@type": "euonair:AiUsePolicy", "euonair:permissionLevel": {"@id": "euvoc:ai-permission/restricted-to-listed-purposes"},
-             "euonair:permittedPurpose": [{"@id": "euvoc:ai-purpose/explanation"}],
-             "euonair:interactionModeHint": {"@id": "euvoc:ai-interaction/guided"},
-             "euonair:disclosureRequirement": {"@id": "euvoc:ai-disclosure/statement"}}
-    both("rule before the gate as a policy of its own (explanations only)", lambda r: r["euonair:assessmentComponent"][1]["euonair:aiCondition"].update(
-        {"euonair:beforeGate": copy.deepcopy(inner)}), True)
+    both("course-default before the gate of an assessment condition", lambda r: r["euonair:assessmentComponent"][1]["euonair:aiCondition"].update(
+        {"euonair:beforeGate": {"@id": "euvoc:before-gate/course-default"}}), True)
     both("course-default before a gate on the course-level policy", lambda r: r["euonair:aiUsePolicy"].update(
         {"euonair:gatedBy": {"@id": "https://example.edu/course-units/NLP-3060#ac3"}, "euonair:beforeGate": {"@id": "euvoc:before-gate/course-default"}}), False)
     both("full IRI for grading mode", lambda r: r.update({"euonair:gradingMode": {"@id": voc + "grading/pass-fail"}}), True)
