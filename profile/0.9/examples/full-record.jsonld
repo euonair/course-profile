@@ -453,6 +453,9 @@
         },
         "euonair:materialInput": {
           "@id": "euvoc:ai-material-input/institutional-tools-only"
+        },
+        "euonair:beforeGate": {
+          "@id": "euvoc:before-gate/course-default"
         }
       }
     },

@@ -252,10 +252,25 @@ shapes:AiUsePolicyCoreShape a sh:NodeShape ;
     sh:property [ sh:path euonair:disclosureScope ; sh:name "A11/A12 Disclosure scope" ; sh:severity sh:Violation ; sh:maxCount 1 ; sh:in ( <https://w3id.org/euonair/vocab/ai-disclosure-scope/all-use> <https://w3id.org/euonair/vocab/ai-disclosure-scope/substantial-use> ) ] ;
     sh:property [ sh:path euonair:materialInput ; sh:name "A11/A12 Input of course materials" ; sh:severity sh:Violation ; sh:maxCount 1 ; sh:in ( <https://w3id.org/euonair/vocab/ai-material-input/not-permitted> <https://w3id.org/euonair/vocab/ai-material-input/institutional-tools-only> <https://w3id.org/euonair/vocab/ai-material-input/permitted> ) ] ;
     sh:property [ sh:path euonair:gatedBy ; sh:name "A11/A12 Gate" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;
+    sh:property [ sh:path euonair:beforeGate ; sh:name "A11/A12 Rule before the gate" ; sh:severity sh:Violation ; sh:maxCount 1 ;
+                  sh:or ( [ sh:in ( <https://w3id.org/euonair/vocab/before-gate/no-ai-use> <https://w3id.org/euonair/vocab/before-gate/course-default> ) ] [ sh:node shapes:InnerAiUsePolicyShape ] ) ] ;
+    sh:or ( [ sh:path euonair:beforeGate ; sh:maxCount 0 ] [ sh:path euonair:gatedBy ; sh:minCount 1 ] ) ;
     sh:property [ sh:path euonair:permittedPurpose ; sh:name "A11/A12 Permitted purpose" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;
     sh:property [ sh:path euonair:excludedPurpose ; sh:name "A11/A12 Excluded purpose" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;
     sh:property [ sh:path euonair:protectsOutcome ; sh:name "A11/A12 Protected outcome" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;
     sh:property [ sh:path euonair:institutionalPolicy ; sh:name "A11/A12 Institutional policy" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] .
+
+# A policy given inside beforeGate takes no gate of its own (Annex C.2, precedence rule 10).
+shapes:InnerAiUsePolicyShape a sh:NodeShape ;
+    sh:property [ sh:path euonair:gatedBy ; sh:name "Rule before the gate: no own gate" ; sh:severity sh:Violation ; sh:maxCount 0 ] ;
+    sh:property [ sh:path euonair:beforeGate ; sh:name "Rule before the gate: no own rule before the gate" ; sh:severity sh:Violation ; sh:maxCount 0 ] ;
+    sh:property [ sh:path euonair:permissionLevel ; sh:name "Rule before the gate: permission level" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ( <https://w3id.org/euonair/vocab/ai-permission/not-permitted> <https://w3id.org/euonair/vocab/ai-permission/restricted-to-listed-purposes> <https://w3id.org/euonair/vocab/ai-permission/scaffolding-only> <https://w3id.org/euonair/vocab/ai-permission/permitted-with-disclosure> <https://w3id.org/euonair/vocab/ai-permission/unrestricted> <https://w3id.org/euonair/vocab/ai-permission/required> ) ] .
+
+# course-default is not available on the course-level policy (Annex C.11).
+shapes:CourseLevelBeforeGateShape a sh:NodeShape ;
+    sh:targetObjectsOf euonair:aiUsePolicy ;
+    sh:property [ sh:path euonair:beforeGate ; sh:name "A11 Rule before the gate: course-default not available at course level" ; sh:severity sh:Violation ;
+                  sh:not [ sh:hasValue <https://w3id.org/euonair/vocab/before-gate/course-default> ] ] .
 
 shapes:MetadataRecordCoreShape a sh:NodeShape ;
     sh:targetObjectsOf euonair:metadataRecord ;

@@ -279,7 +279,34 @@
       ]
     },
     "euonair:aiUsePolicy": {
-      "$ref": "#/$defs/aiUsePolicy"
+      "description": "Course-level policy (A11); course-default is not available before a gate at this level (Annex C.11).",
+      "allOf": [
+        {
+          "$ref": "#/$defs/aiUsePolicy"
+        },
+        {
+          "not": {
+            "required": [
+              "euonair:beforeGate"
+            ],
+            "properties": {
+              "euonair:beforeGate": {
+                "required": [
+                  "@id"
+                ],
+                "properties": {
+                  "@id": {
+                    "enum": [
+                      "euvoc:before-gate/course-default",
+                      "https://w3id.org/euonair/vocab/before-gate/course-default"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "euonair:metadataRecord": {
       "type": "object",
@@ -767,6 +794,23 @@
         }
       }
     },
+    "beforeGateValue": {
+      "description": "Closed scheme euvoc:before-gate/ (prefixed or full IRI)",
+      "type": "object",
+      "required": [
+        "@id"
+      ],
+      "properties": {
+        "@id": {
+          "enum": [
+            "euvoc:before-gate/no-ai-use",
+            "euvoc:before-gate/course-default",
+            "https://w3id.org/euonair/vocab/before-gate/no-ai-use",
+            "https://w3id.org/euonair/vocab/before-gate/course-default"
+          ]
+        }
+      }
+    },
     "ref": {
       "description": "A reference to a node or resource by IRI, as {\"@id\": ...}; a plain string would expand to an RDF literal.",
       "type": "object",
@@ -842,7 +886,47 @@
               }
             }
           ]
+        },
+        "euonair:beforeGate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/beforeGateValue"
+            },
+            {
+              "allOf": [
+                {
+                  "$ref": "#/$defs/aiUsePolicy"
+                },
+                {
+                  "required": [
+                    "euonair:permissionLevel"
+                  ]
+                },
+                {
+                  "not": {
+                    "anyOf": [
+                      {
+                        "required": [
+                          "euonair:gatedBy"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "euonair:beforeGate"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
         }
+      },
+      "dependentRequired": {
+        "euonair:beforeGate": [
+          "euonair:gatedBy"
+        ]
       }
     }
   }
