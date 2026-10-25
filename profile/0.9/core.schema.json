@@ -682,11 +682,11 @@
         "@id": {
           "enum": [
             "euvoc:generation/human-authored",
-            "euvoc:generation/ai-extracted",
-            "euvoc:generation/ai-extracted-human-reviewed",
+            "euvoc:generation/ai-assisted",
+            "euvoc:generation/ai-assisted-human-reviewed",
             "https://w3id.org/euonair/vocab/generation/human-authored",
-            "https://w3id.org/euonair/vocab/generation/ai-extracted",
-            "https://w3id.org/euonair/vocab/generation/ai-extracted-human-reviewed"
+            "https://w3id.org/euonair/vocab/generation/ai-assisted",
+            "https://w3id.org/euonair/vocab/generation/ai-assisted-human-reviewed"
           ]
         }
       }

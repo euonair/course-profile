@@ -104,6 +104,12 @@ def run(files: Files) -> tuple[list[tuple[str, str, str, bool]], dict[str, int]]
         record(f"{name}: SHACL", "0 violations", f"{v} violations", v == 0)
         graphs[name] = g
 
+    # The two examples describe different courses: no course, outcome, assessment or record IRI of one example may
+    # reappear in the other (Annex B.4). Shared resources such as the institution or the EQF level are allowed.
+    nodes = {n: {str(s) for s in g.subjects() if isinstance(s, rdflib.URIRef) and "/course-units/" in str(s)} for n, g in graphs.items()}
+    shared = nodes["minimal-record"] & nodes["full-record"]
+    record("examples use distinct node identifiers", "0 shared", f"{len(shared)} shared", not shared)
+
     # SHACL negative tests on the graph: each mutation of the full record must produce a violation.
     full = graphs["full-record"]
     root = next(full.subjects(E.metadataRecord, None))

@@ -7,20 +7,20 @@
       "dcterms": "http://purl.org/dc/terms/"
     }
   ],
-  "@id": "https://example.edu/course-units/NLP-3060",
+  "@id": "https://example.edu/course-units/NLP-2040",
   "@type": [
     "Course",
     "euonair:CourseUnit"
   ],
   "schemaVersion": "https://w3id.org/euonair/course/profile/0.9",
-  "courseCode": "NLP-3060",
+  "courseCode": "NLP-2040",
   "identifier": {
     "@type": "PropertyValue",
     "propertyID": "https://example.edu/ns/course-codes",
-    "value": "NLP-3060"
+    "value": "NLP-2040"
   },
   "name": {
-    "@value": "Natural Language Processing",
+    "@value": "Applied Natural Language Processing",
     "@language": "en"
   },
   "euonair:unitType": {
@@ -35,7 +35,7 @@
       "addressCountry": "DE"
     }
   },
-  "url": "https://example.edu/catalogue/NLP-3060",
+  "url": "https://example.edu/catalogue/NLP-2040",
   "description": {
     "@value": "Processing, understanding and generating language with classical models and Transformer-based language models; team mini-projects on building and evaluating NLP applications.",
     "@language": "en"
@@ -100,7 +100,7 @@
   ],
   "teaches": [
     {
-      "@id": "https://example.edu/course-units/NLP-3060#lo1",
+      "@id": "https://example.edu/course-units/NLP-2040#lo1",
       "@type": [
         "DefinedTerm",
         "euonair:LearningOutcome"
@@ -112,7 +112,7 @@
       }
     },
     {
-      "@id": "https://example.edu/course-units/NLP-3060#lo2",
+      "@id": "https://example.edu/course-units/NLP-2040#lo2",
       "@type": [
         "DefinedTerm",
         "euonair:LearningOutcome"
@@ -124,7 +124,7 @@
       }
     },
     {
-      "@id": "https://example.edu/course-units/NLP-3060#lo3",
+      "@id": "https://example.edu/course-units/NLP-2040#lo3",
       "@type": [
         "DefinedTerm",
         "euonair:LearningOutcome"
@@ -152,7 +152,7 @@
   ],
   "euonair:assessmentComponent": [
     {
-      "@id": "https://example.edu/course-units/NLP-3060#ac1",
+      "@id": "https://example.edu/course-units/NLP-2040#ac1",
       "@type": "euonair:AssessmentComponent",
       "euonair:assessmentMethod": {
         "@id": "euvoc:assessment-method/oral-exam"
@@ -163,7 +163,7 @@
       }
     },
     {
-      "@id": "https://example.edu/course-units/NLP-3060#ac2",
+      "@id": "https://example.edu/course-units/NLP-2040#ac2",
       "@type": "euonair:AssessmentComponent",
       "euonair:assessmentMethod": {
         "@id": "euvoc:assessment-method/project-report"
@@ -190,7 +190,7 @@
   ],
   "dateModified": "2026-09-15",
   "euonair:metadataRecord": {
-    "@id": "https://example.edu/course-units/NLP-3060#record",
+    "@id": "https://example.edu/course-units/NLP-2040#record",
     "@type": "euonair:MetadataRecord",
     "dcterms:conformsTo": {
       "@id": "https://w3id.org/euonair/course/profile/0.9"

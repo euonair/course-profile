@@ -745,7 +745,7 @@
       "de"
     ],
     "euonair:generationMethod": {
-      "@id": "euvoc:generation/ai-extracted-human-reviewed"
+      "@id": "euvoc:generation/ai-assisted-human-reviewed"
     },
     "isBasedOn": {
       "@type": "DigitalDocument",

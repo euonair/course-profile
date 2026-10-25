@@ -277,5 +277,5 @@ shapes:MetadataRecordCoreShape a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
     sh:property [ sh:path rdf:type ; sh:name "R01 Record type" ; sh:severity sh:Violation ; sh:hasValue euonair:MetadataRecord ] ;
     sh:property [ sh:path dcterms:conformsTo ; sh:name "R02 Profile conformance" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;
-    sh:property [ sh:path euonair:generationMethod ; sh:name "R09 Generation method" ; sh:severity sh:Violation ; sh:in ( <https://w3id.org/euonair/vocab/generation/human-authored> <https://w3id.org/euonair/vocab/generation/ai-extracted> <https://w3id.org/euonair/vocab/generation/ai-extracted-human-reviewed> ) ] ;
+    sh:property [ sh:path euonair:generationMethod ; sh:name "R09 Generation method" ; sh:severity sh:Violation ; sh:in ( <https://w3id.org/euonair/vocab/generation/human-authored> <https://w3id.org/euonair/vocab/generation/ai-assisted> <https://w3id.org/euonair/vocab/generation/ai-assisted-human-reviewed> ) ] ;
     sh:property [ sh:path schema:creativeWorkStatus ; sh:name "R10 Review status" ; sh:severity sh:Violation ; sh:in ( <https://w3id.org/euonair/vocab/review-status/draft> <https://w3id.org/euonair/vocab/review-status/under-review> <https://w3id.org/euonair/vocab/review-status/approved> <https://w3id.org/euonair/vocab/review-status/archived> ) ] .

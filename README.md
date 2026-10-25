@@ -33,7 +33,7 @@ The example records describe a fictitious course at a fictitious institution. Re
 uv run --with pyld --with rdflib --with pyshacl --with jsonschema python validate.py
 ```
 
-The validator runs offline. It expands both example records as published, with a pinned copy of the official schema.org context (fetched 2026-10-20), checks them against the JSON Schema and the SHACL shapes and runs negative tests with invalid variants (69 tests). Rules that need a semantic validator (sums of hours and weights, outcome references, AI-policy consistency) are not checked; passing shows that a record meets the implemented constraints, not conformance with every rule of the profile.
+The validator runs offline. It expands both example records as published, with a pinned copy of the official schema.org context (fetched 2026-10-20), checks them against the JSON Schema and the SHACL shapes and runs negative tests with invalid variants (70 tests). Rules that need a semantic validator (sums of hours and weights, outcome references, AI-policy consistency) are not checked; passing shows that a record meets the implemented constraints, not conformance with every rule of the profile.
 
 ## Persistent identifiers
 
