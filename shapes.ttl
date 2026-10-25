@@ -246,7 +246,7 @@ shapes:AssessmentComponentReferenceShape a sh:NodeShape ;
 
 shapes:AiUsePolicyCoreShape a sh:NodeShape ;
     sh:targetClass euonair:AiUsePolicy ;
-    sh:targetObjectsOf euonair:aiUsePolicy , euonair:aiCondition ;
+    sh:targetObjectsOf euonair:aiUsePolicy , euonair:aiCondition , euonair:beforeGate ;
     sh:property [ sh:path euonair:permissionLevel ; sh:name "A11/A12 Permission level" ; sh:severity sh:Violation ; sh:maxCount 1 ; sh:in ( <https://w3id.org/euonair/vocab/ai-permission/not-permitted> <https://w3id.org/euonair/vocab/ai-permission/restricted-to-listed-purposes> <https://w3id.org/euonair/vocab/ai-permission/scaffolding-only> <https://w3id.org/euonair/vocab/ai-permission/permitted-with-disclosure> <https://w3id.org/euonair/vocab/ai-permission/unrestricted> <https://w3id.org/euonair/vocab/ai-permission/required> ) ] ;
     sh:property [ sh:path euonair:disclosureRequirement ; sh:name "A11/A12 Disclosure requirement" ; sh:severity sh:Violation ; sh:maxCount 1 ; sh:in ( <https://w3id.org/euonair/vocab/ai-disclosure/none> <https://w3id.org/euonair/vocab/ai-disclosure/statement> <https://w3id.org/euonair/vocab/ai-disclosure/inline-marking> <https://w3id.org/euonair/vocab/ai-disclosure/detailed-log> ) ] ;
     sh:property [ sh:path euonair:disclosureScope ; sh:name "A11/A12 Disclosure scope" ; sh:severity sh:Violation ; sh:maxCount 1 ; sh:in ( <https://w3id.org/euonair/vocab/ai-disclosure-scope/all-use> <https://w3id.org/euonair/vocab/ai-disclosure-scope/substantial-use> ) ] ;

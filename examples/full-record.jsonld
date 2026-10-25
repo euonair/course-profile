@@ -469,6 +469,9 @@
           },
           "euonair:disclosureRequirement": {
             "@id": "euvoc:ai-disclosure/statement"
+          },
+          "euonair:materialInput": {
+            "@id": "euvoc:ai-material-input/institutional-tools-only"
           }
         }
       }

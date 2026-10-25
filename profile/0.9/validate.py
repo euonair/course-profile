@@ -199,6 +199,9 @@ def run(files: Files) -> tuple[list[tuple[str, str, str, bool]], dict[str, int]]
         {"creativeWorkStatus": {"@id": "euvoc:review-status/not-a-real-status"}}), False)
     both("course-default before the gate of an assessment condition", lambda r: r["euonair:assessmentComponent"][1]["euonair:aiCondition"].update(
         {"euonair:beforeGate": {"@id": "euvoc:before-gate/course-default"}}), True)
+    both("rule before the gate without @type and with an undefined disclosure value", lambda r: r["euonair:assessmentComponent"][1]["euonair:aiCondition"].update(
+        {"euonair:beforeGate": {"euonair:permissionLevel": {"@id": "euvoc:ai-permission/not-permitted"},
+                                "euonair:disclosureRequirement": {"@id": "euvoc:ai-disclosure/not-a-real-value"}}}), False)
     both("course-default before a gate on the course-level policy", lambda r: r["euonair:aiUsePolicy"].update(
         {"euonair:gatedBy": {"@id": "https://example.edu/course-units/NLP-3060#ac3"}, "euonair:beforeGate": {"@id": "euvoc:before-gate/course-default"}}), False)
     both("full IRI for grading mode", lambda r: r.update({"euonair:gradingMode": {"@id": voc + "grading/pass-fail"}}), True)

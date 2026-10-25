@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://w3id.org/euonair/course/profile/0.9/core.schema.json",
   "title": "EUonAIR AI-Ready Course Description Profile - core tier",
-  "description": "Validates the compacted JSON-LD form of a course-unit record against the CORE tier and the mandatory RECORD fields. Recommended and optional fields are not required; where present, the closed value lists (group mode, grading, generation method, review status, AI permission level, AI disclosure), the value sets of cognitive level and competence category, and the reference form ({\"@id\": ...}) of grading scale, ELM export link and institutional policy are checked. Semantic rules (sums, ranges, references, AI-policy consistency) are left to a semantic validator. Placeholder namespace https://w3id.org/euonair/course#.",
+  "description": "Validates the compacted JSON-LD form of a course-unit record against the CORE tier and the mandatory RECORD fields. Recommended and optional fields are not required; where present, the closed value lists (group mode, grading, generation method, review status, AI permission level, AI disclosure, disclosure scope, input of course materials, rule before the gate), the value sets of cognitive level and competence category, the reference form ({\"@id\": ...}) of grading scale, ELM export link, institutional policy and AI-use gate, and the rules for the rule before the gate are checked. The linked offering is not validated by this schema. Semantic rules (sums, ranges, references, AI-policy consistency) are left to a semantic validator. Namespace https://w3id.org/euonair/course#.",
   "type": "object",
   "required": [
     "@context",
