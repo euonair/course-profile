@@ -444,6 +444,17 @@
         "euonair:verificationExpectation": {
           "@id": "euvoc:ai-verification/verify-and-be-able-to-explain"
         },
+        "euonair:interactionModeHint": {
+          "@id": "euvoc:ai-interaction/guided"
+        },
+        "euonair:protectsOutcome": [
+          {
+            "@id": "https://example.edu/course-units/NLP-3060#lo4"
+          },
+          {
+            "@id": "https://example.edu/course-units/NLP-3060#lo5"
+          }
+        ],
         "euonair:note": {
           "@value": "AI assistance for code is allowed. The evaluation report and the decision memo must be written by the team; append the prompt log and state how outputs were checked.",
           "@language": "en"
