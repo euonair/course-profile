@@ -184,7 +184,7 @@ shapes:CourseUnitCoreShape a sh:NodeShape ;
     sh:property [ sh:path euonair:gradingMode ; sh:name "C16 Grading mode" ; sh:severity sh:Violation ; sh:in ( <https://w3id.org/euonair/vocab/grading/graded> <https://w3id.org/euonair/vocab/grading/pass-fail> ) ] ;
     sh:property [ sh:path euonair:gradingScale ; sh:name "C16 Grading scale" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;
     sh:property [ sh:path schema:url ; sh:name "C05 Description URL" ; sh:severity sh:Violation ; sh:pattern "^https?://\\S+$" ] ;
-    sh:property [ sh:path schema:schemaVersion ; sh:name "R02 Profile version (unit)" ; sh:severity sh:Violation ; sh:pattern "^https?://\\S+$" ] ;
+    sh:property [ sh:path schema:schemaVersion ; sh:name "R02 Profile version (unit)" ; sh:severity sh:Violation ; sh:minCount 1 ; sh:pattern "^https?://\\S+$" ] ;
     sh:property [ sh:path schema:license ; sh:name "A13 Licence" ; sh:severity sh:Violation ; sh:pattern "^https?://\\S+$" ] ;
     sh:property [ sh:path schema:usageInfo ; sh:name "A13 Usage terms" ; sh:severity sh:Violation ; sh:pattern "^https?://\\S+$" ] ;
     sh:property [ sh:path schema:isPartOf ; sh:name "X10 Parent unit" ; sh:severity sh:Violation ; sh:nodeKind sh:IRI ] ;

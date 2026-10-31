@@ -411,6 +411,10 @@
       "euonair:assessmentSetting": {
         "@id": "euvoc:assessment-setting/unsupervised-open"
       },
+      "euonair:assessmentCriteria": {
+        "@value": "Metrics chosen and justified for the claim, results interpreted correctly, risks weighed and the release decision justified by the team itself. AI-assisted parts are disclosed in the log and can be explained by every team member.",
+        "@language": "en"
+      },
       "assesses": [
         {
           "@id": "https://example.edu/course-units/NLP-3060#lo3"
@@ -456,7 +460,7 @@
           }
         ],
         "euonair:note": {
-          "@value": "AI assistance for code is allowed. The evaluation report and the decision memo must be written by the team; append the prompt log and state how outputs were checked.",
+          "@value": "AI may help with code and explanations. The team selects and justifies the metrics, interprets the results, weighs the risks and makes the release decision itself. The evaluation report and the decision memo are written by the team. Append the prompt log and state how outputs were checked.",
           "@language": "en"
         },
         "euonair:gatedBy": {

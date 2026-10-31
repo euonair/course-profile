@@ -28,7 +28,8 @@
     "coursePrerequisites",
     "citation",
     "dateModified",
-    "euonair:metadataRecord"
+    "euonair:metadataRecord",
+    "schemaVersion"
   ],
   "properties": {
     "@context": {
@@ -337,6 +338,11 @@
           "$ref": "#/$defs/reviewStatus"
         }
       }
+    },
+    "schemaVersion": {
+      "description": "R02 Profile version the course unit conforms to (IRI)",
+      "type": "string",
+      "pattern": "^https?://\\S+$"
     }
   },
   "$defs": {

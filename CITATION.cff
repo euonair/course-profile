@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this profile, please cite the MS10 report."
 title: "EUonAIR AI-Ready Course Description Profile"
-version: "0.9.3"
+version: "0.9.4"
 license: CC-BY-4.0
 repository-code: "https://github.com/euonair/course-profile"
 url: "https://w3id.org/euonair/course"
