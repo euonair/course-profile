@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.5 — 31 October 2026
+
+Full example: the German title of the course is "Natural Language Processing", as German programmes commonly use the English title. Nothing else changed.
+
 ## 0.9.4 — 31 October 2026
 
 Decisions on the review of report v20. Full example: the AI condition of the team mini-projects states that the team selects and justifies the metrics, interprets the results and makes the release decision itself (note and new assessment criteria). JSON Schema and SHACL shapes require `schemaVersion` on the course unit (R02 is mandatory). Element list: curriculum positions outside a semester calendar are stated in the content description (X30, D07), reviewed and approved translations may be approved language versions (A.0, R14), approved accommodations remain under the institution's authority (precedence rule 7). Value lists and context are unchanged.
