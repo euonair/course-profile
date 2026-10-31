@@ -23,7 +23,8 @@ A metadata application profile for course descriptions that AI tools and course 
 | `examples/minimal-record.jsonld` | Illustrative core-level record |
 | `vocab/` | Seed vocabularies (`euvoc:`) |
 | `validate.py`, `validation/` | Validator for the example records against the JSON Schema and the SHACL shapes, with the pinned schema.org context |
-| `profile/0.9/` | Frozen copy of release 0.9 |
+| `profile/0.9/` | Files of profile version 0.9, following the current 0.9.x release (each release is a git tag) |
+| `CITATION.cff` | Citation metadata |
 
 The example records describe a fictitious course at a fictitious institution. Records reference the schema.org context as `https://schema.org/`; schema.org terms expand to `http://schema.org/`, as in the official schema.org context.
 
@@ -34,6 +35,10 @@ uv run --with pyld --with rdflib --with pyshacl --with jsonschema python validat
 ```
 
 The validator runs offline. It expands both example records as published, with a pinned copy of the official schema.org context (fetched 2026-10-20), checks them against the JSON Schema and the SHACL shapes and runs negative tests with invalid variants (70 tests). Rules that need a semantic validator (sums of hours and weights, outcome references, AI-policy consistency) are not checked; passing shows that a record meets the implemented constraints, not conformance with every rule of the profile.
+
+## To cite
+
+Lanquillon, C., Langer, Y., & Yasin, R. (2026). *AI-ready course descriptions* (EUonAIR Milestone MS10, Task T4.6). Heilbronn University of Applied Sciences. Profile: EUonAIR AI-Ready Course Description Profile, version 0.9, https://w3id.org/euonair/course
 
 ## Persistent identifiers
 

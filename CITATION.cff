@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this profile, please cite the MS10 report."
+title: "EUonAIR AI-Ready Course Description Profile"
+version: "0.9.3"
+license: CC-BY-4.0
+repository-code: "https://github.com/euonair/course-profile"
+url: "https://w3id.org/euonair/course"
+authors:
+  - family-names: Lanquillon
+    given-names: Carsten
+  - family-names: Langer
+    given-names: Yannik
+  - family-names: Yasin
+    given-names: Riem
+preferred-citation:
+  type: report
+  title: "AI-ready course descriptions"
+  year: 2026
+  institution:
+    name: "Heilbronn University of Applied Sciences"
+  notes: "EUonAIR Milestone MS10, Task T4.6"
+  authors:
+    - family-names: Lanquillon
+      given-names: Carsten
+    - family-names: Langer
+      given-names: Yannik
+    - family-names: Yasin
+      given-names: Riem

@@ -663,7 +663,10 @@
     "termCode": "B2",
     "name": "English B2"
   },
-  "accessibilitySummary": "Lecture videos are captioned; notebooks and slides are provided in accessible formats.",
+  "accessibilitySummary": {
+    "@value": "Lecture videos are captioned; notebooks and slides are provided in accessible formats.",
+    "@language": "en"
+  },
   "accessMode": [
     "textual",
     "visual",
