@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.6 — 1 November 2026
+
+Element list and website: the definition of C13 (learning outcomes) states that learning objectives written as statements of what students can do are recorded there. Nothing else changed.
+
 ## 0.9.5 — 31 October 2026
 
 Full example: the German title of the course is "Natural Language Processing", as German programmes commonly use the English title. Nothing else changed.
