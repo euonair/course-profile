@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.7 — 1 November 2026
+
+Links to programme-level goals (report v22, Section 6.7). A03 names programme outcomes, competency goals or learning objectives as targets. Optional `euonair:assessmentPointFor` in the programme placement (X30), optional `euonair:rubric` links per assessment component (A06) and optional `euonair:permittedAids` per assessment component (C15). Full example: permitted aids of the oral examination, a rubric link and an assessment point. JSON Schema accepts the two new optional properties of assessment components. Value lists and context are unchanged.
+
 ## 0.9.6 — 1 November 2026
 
 Element list and website: the definition of C13 (learning outcomes) states that learning objectives written as statements of what students can do are recorded there. Nothing else changed.

@@ -112,6 +112,7 @@ shapes:AssessmentComponentShape a sh:NodeShape ;
     sh:targetClass euonair:AssessmentComponent ;
     sh:property [ sh:path schema:assesses ; sh:name "A04 Assessed outcomes" ; sh:severity sh:Warning ] ;
     sh:property [ sh:path euonair:assessmentCriteria ; sh:name "A06 Assessment criteria" ; sh:severity sh:Warning ] ;
+    sh:property [ sh:path euonair:rubric ; sh:name "A06 Assessment criteria" ; sh:severity sh:Warning ] ;
     sh:property [ sh:path euonair:aiCondition ; sh:name "A12 Assessment-level AI condition" ; sh:severity sh:Warning ; sh:maxCount 1 ] ;
     sh:property [ sh:path euonair:assessmentSetting ; sh:name "A21 Assessment setting" ; sh:severity sh:Warning ; sh:maxCount 1 ] .
 

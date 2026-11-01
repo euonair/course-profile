@@ -153,7 +153,12 @@
       "euonair:obligation": {
         "@id": "euvoc:obligation/compulsory"
       },
-      "euonair:recommendedSemester": 6
+      "euonair:recommendedSemester": 6,
+      "euonair:assessmentPointFor": [
+        {
+          "@id": "https://example.edu/programmes/bsc-artificial-intelligence#plo4"
+        }
+      ]
     }
   ],
   "numberOfCredits": {
@@ -367,6 +372,10 @@
       "euonair:assessmentSetting": {
         "@id": "euvoc:assessment-setting/supervised-onsite"
       },
+      "euonair:permittedAids": {
+        "@value": "No aids.",
+        "@language": "en"
+      },
       "assesses": [
         {
           "@id": "https://example.edu/course-units/NLP-3060#lo1"
@@ -424,6 +433,11 @@
         },
         {
           "@id": "https://example.edu/course-units/NLP-3060#lo5"
+        }
+      ],
+      "euonair:rubric": [
+        {
+          "@id": "https://example.edu/programmes/bsc-artificial-intelligence/rubrics/plo4"
         }
       ],
       "euonair:aiCondition": {

@@ -491,6 +491,24 @@
         },
         "euonair:aiCondition": {
           "$ref": "#/$defs/aiUsePolicy"
+        },
+        "euonair:permittedAids": {
+          "description": "C15 Permitted aids other than AI (optional)",
+          "$ref": "#/$defs/langStrings"
+        },
+        "euonair:rubric": {
+          "description": "A06 Rubrics or rubric criteria used by the component (optional, IRI references)",
+          "oneOf": [
+            {
+              "$ref": "#/$defs/ref"
+            },
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ref"
+              }
+            }
+          ]
         }
       },
       "anyOf": [
